@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 25</title>
+  </head>
+  <body>
+    <script>
+      // Task 1
+
+      // const user = {};
+
+      // Object.defineProperty(user, "name", {
+      //   value: "",
+      //   enumerable: true,
+      //   configurable: true,
+      // });
+      // Object.defineProperty(user, "age", {
+      //   value: "",
+      //   enumerable: true,
+      //   configurable: true,
+      // });
+      // Object.defineProperty(user, "id", {
+      //   value: "",
+      //   enumerable: true,
+      // });
+
+      // Task 2
+
+      // const dataBase = {
+      //   dbName: "user",
+      //   dbType: "MySQL",
+      // };
+
+      // const configurateDB = {
+      //   token: "123",
+      //   password: "567",
+      //   user: "admin",
+      // };
+
+      // Object.freeze(dataBase);
+
+      // Object.seal(configurateDB);
+
+      // Task 3
+
+      // const salaries = {
+      //   frontend: 2000,
+      //   backend: 1500,
+      //   design: 1000,
+      //   set addSalaries(value) {
+      //     for (let i = 0; i < value.length; i++) {
+      //       const salary = value[i].split(": ");
+      //       console.log("salary:", salary[0], "cost:", salary[1]);
+      //       this[salary[0]] = salary[1];
+      //     }
+      //   },
+      // };
+      // Object.defineProperty(salaries, "sum", {
+      //   get() {
+      //     let sum = 0;
+      //     for (salary in this) {
+      //       sum += this[salary];
+      //     }
+      //     console.log(sum);
+      //   },
+      //   enumerable: false,
+      // });
+
+      // salaries.addSalaries = [
+      //   "frontend: 2500",
+      //   "backend: 1750",
+      //   "design: 1300",
+      //   "manager: 800",
+      // ];
+      // console.log(salaries);
+
+      //  Task 4
+
+      const user = {
+        name: "Mike",
+        surname: "Davis",
+        age: 25,
+      };
+
+      Object.defineProperty(user, "userInfo", {
+        get() {
+          console.log(
+            Object.entries(this)
+              .map(([key, value]) => `${key}: ${value}`)
+              .join(", ")
+          );
+        },
+      });
+
+      user.userInfo;
+      user.login = "MK_18";
+      user.userInfo;
+    </script>
+  </body>
+</html>
